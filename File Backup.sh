@@ -4,10 +4,7 @@
 echo "Enter your desired directory"
 read -p "directory : " file_path
 echo "The current directory is" $file_path
-sleep 5
-echo "Enter your backup directory path"
 read -p "backup_path : " backup_path
-sleep 5
 echo "The backup path is " $backup_path
 if [ -d "$backup_path" ]
 then
@@ -17,10 +14,8 @@ else
 fi
 
 # create a file backup
-scp -r $file_path $backup_path
-sleep 5
+cp -r $file_path $backup_path
 echo "*****************"
 echo "File Backup successfully created."
-echo "    "
 echo "****************"
 ls $backup_path
