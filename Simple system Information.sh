@@ -5,7 +5,6 @@ echo " " >> info.txt
 echo "Kernel Version" >> info.txt
 uname -srv >> info.txt
 echo " " >> info.txt
-echo " " >> info.txt
 
 echo "Host Details" >> info.txt
 hostnamectl >> info.txt
