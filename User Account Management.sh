@@ -8,9 +8,7 @@ sleep 2
 if [[ "$username" == "$var1" ]]
 then
 	echo "This user $username exist"
-	sleep 2
 	echo "What would you like to do today?"
-	sleep 1
 	echo  "*******************************"
 	echo "1. Modify"
 	echo "2. Delete"
@@ -28,7 +26,6 @@ then
 	elif [[ "$action" == 1 ]]
 	then
 		echo "Below are the following actions you can perform"
-		echo " "
 		echo "***********************************************"
 		echo "1. Add user to a group"
 		echo "2. Remove user from a group"
@@ -36,7 +33,6 @@ then
 		echo "4. Exit"
 		echo "*************************************************"
 		echo "Enter 1, 2, 3,or 4 based on the action you want to perform"
-		sleep 2
 		read -p "user_input: " user_input
 		case $user_input in
 			1)
@@ -73,33 +69,26 @@ then
 				exit 
 				;;
 		esac
-
-		sleep 1
 		exit 
 	else
 		echo "You have typed a wrong action"
-		sleep 2
 		echo "exiting ..."
 		exit
 	fi
 else
 	echo "User does not exist"
-	sleep 1
 	echo "Do you want to add this user? yes/no "
 	read -p "response: " response
 	if [[ "$response" == "yes" ]]
 	then
 		sudo useradd $username
-		sleep 2
 		echo "User $username successfully added!!!!!"
 	elif [[ "$response" == "no" ]]
 	then
 		echo "exiting ..."
-		sleep 1
 		exit
 	else
 		echo "You have typed a wrong action"
-		sleep 1
 		echo "terminating process..."
 		exit
 	fi
